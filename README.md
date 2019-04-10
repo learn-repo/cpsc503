@@ -2,5 +2,5 @@
 
 My name is Hilmi Abou-Saleh, and this is my last semester of school! During this semester I am working on implementing a mobile application that helps users become more aware of what an app can collect on them. [AppCensus](https://search.appcensus.io/) provides the base I will use for this research.
 
-Additionally this page will contain links to my proposal and paper.
+Additionally this page will contain links to my proposal and <a href="draft.html">draft paper</a>. A final version of the paper will be uploaded shortly.
 
