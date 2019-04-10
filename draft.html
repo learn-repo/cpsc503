@@ -1,0 +1,717 @@
+<div class="center" 
+>
+<span 
+class="ptmb7t-x-x-144">Educating the Mobile Landscape:</span><br />
+<span 
+class="ptmb7t-x-x-144">Building Awareness of Invasive Mobile Applications</span>
+<div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-1-1"  
+class="td11"><span 
+class="ptmr7t-">Hilmi Abou-Saleh</span></td></tr></table>
+</div>
+<span 
+class="ptmr7t-">Department of Computer Science</span><br />
+<span 
+class="ptmr7t-">University of Calgary</span></div>
+  <div  
+class="centerline">                                       <span 
+class="ptmri7t-">Abstract</span>                                       </div><span 
+class="ptmr7t-">There</span>
+<span 
+class="ptmr7t-">is an ever-growing number of people using applications</span>
+<span 
+class="ptmr7t-">on mobile smartphones, with over 500 million third-party</span>
+<span 
+class="ptmr7t-">applications downloaded per day. The shift to advertising-led</span>
+<span 
+class="ptmr7t-">revenue in mobile applications has been met with a simultaneous</span>
+<span 
+class="ptmr7t-">shift in data collection. Data collected includes user&#8217;s personally</span>
+<span 
+class="ptmr7t-">identifying information to aid in behavioural advertising.</span>
+<span 
+class="ptmr7t-">The move towards these lucrative models has left users</span>
+<span 
+class="ptmr7t-">without an adequate understanding of the data collected</span>
+<span 
+class="ptmr7t-">onthem.Bybuildingatoolthateducatesusers,and</span>
+<span 
+class="ptmr7t-">suggests alternatives to their current applications we can</span>
+<span 
+class="ptmr7t-">build a userbase more aware and informed on how to</span>
+<span 
+class="ptmr7t-">make choice in their applications.</span>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<!-- html --> 
+<meta name="src" content="draft.tex"> 
+<link rel="stylesheet" type="text/css" href="draft.css"> 
+</head><body 
+>
+<!--l. 77--><p class="noindent" ><span 
+class="ptmri7t-">Key words: AppCensus, Security, Android, GDPR, COPPA.</span>
+<a 
+ id="x1-2r1"></a>
+<!--l. 87--><p class="noindent" ><span 
+class="ptmb7t-">1</span>  <span 
+class="ptmb7t-">Introduction</span>
+<a 
+ id="Q1-1-0"></a>
+<!--l. 89--><p class="indent" >
+There exists knowledge gaps between smartphone users
+and  the  way  third-party  smartphone  applications  use
+advertising   to   generate   revenue.   These   applications
+(apps)   use   personally   identifying   information   (PII)
+without  sufficient  awareness.  Such  examples  of  PII  are
+hardware  identifiers  (e.g.,  IMEI,  WiFI  MAC  Address),
+email addresses and sensors like the user&#8217;s location. In
+order to fill these gaps we will use the AppCensus project,
+which  aims  at  giving  users  better  transparency  into
+how  their  mobile  applications  misuse  their  personally
+identifying  information&#x00A0;[].  Over  the  last  decade  there
+has  been  a  shift  in  how  revenue  gets  collected  from    users. Traditionally, users purchased an application and
+   could  use  it  thenceforth.  The  last  decade,  however,
+   has  seen  a  move  away  from  one-time  purchases  and
+   towards recurring and advertising-led revenue. Using the
+   collected personally identifying information, companies
+   build  a  dossier  linking  the  user  to  various  events  and
+   companies. Such examples include using location data to
+   advertise local businesses, or tracking how often a user
+   visits to provide them a small discount to lure them in.
+   This  practice,  called  behavioral  advertising  is  lucrative
+   and requires the collection of PII. Simultaneous to this
+   shift  in  revenue,  the  use  of  apps  has  become  just  as
+   widespread, with over one hundred billion Android apps
+   downloaded in 2018&#x00A0;[]. By creating a tool that informs
+   customers  about  apps  on  their  phones  we  are  able  to
+   begin  raising  awareness  and  providing  transparency  in
+   how these apps use their information.
+   Articles on the invasive nature of apps are wide-spread.
+   Mainstream                                                                news
+   media  have  published  articles  discussing  how  &#8220;mobile
+   apps  take  data  without  permission&#8221;  since  2012&#x00A0;[],  and
+   this  has  not  slowed  down&#x00A0;[].  Due  to  the  nature  of  the
+   medium,  users  are  unlikely  to  change  their  behaviour
+   after reading an article. These articles do not contain a
+   solution users can take. Tom&#8217;s Guide published an article
+   in  late  2018&#x00A0;[]  with  the  solution  being  to  &#8220;reset  the
+   advertising  ID  associated  with  your  device&#8221;.  The  New
+   York  Times  published  an  article  around  the  same  time
+   &#x00A0;[]  providing  a  few  suggestions  including  turning  off
+   Location Services for specific applications. Many other
+   articles suggested similar actions: opt out of ads, using a
+   private browser, and limiting Google&#8217;s own Ad/Location
+   tracking.
+                                                                                         
+                                                                                         
+These  avenues  are  great  for  raising  awareness  with
+users. In 2018, the European Union released the General
+Data  Protection  Regulation  (GDPR),  which  is  by  far
+the  most  ambitious  and  wide-ranging  data  protection
+act  yet,  with  substantial  penalties  to  corporations  that
+violate  its  provision:  4%  of  worldwide  revenue.  Even
+with the GDPR and by following all the newsmedia and
+journalism there is still a gap in transparency.
+If  we  follow  Tom&#8217;s  Guide&#8217;s  advice  to  reset  the  device
+advertising  ID.  We  are  left  with  a  new  advertising  ID.
+Companies,  however,  collect  more  than  one  identifier,
+some  of  which  are  hard  to  reset,  or  cannot  be  reset.
+Limiting  ad/location  tracking  or  turning  off  location
+services  as  a  whole  is  more  effective,  users,  however,
+run  into  apps  not  functioning  correctly  because  core
+functionality depends on it. Disregarding malfunctioning
+apps,  companies  can  use  many  identifiers  to  find  the
+user&#8217;s  location.  This  includes  the  use  of  phone&#8217;s  WiFi
+MAC Address and the router&#8217;s MAC Address. Through
+the combination of the two addresses and the use of router
+mapping  tools&#x00A0;[Skyhook]  finding  the  user&#8217;s  location
+becomes  trivial.  In  summary,  the  issue  with  the  use  of
+articles  to  inform  users  is  the  lack  of  transparency  and
+direct solution for the user.
+We  build  a  tool  to  help  inform  the  users  on  which
+applications  are  misusing  their  personally  identifying
+information.  By  building  a  tool  that  directly  tells  the
+user  that  an  application  is  misusing  their  privacy,  we
+can  influence  a  more  substantial  change  in  behaviour.
+We   believe   that   this   direct   approach   will   have   an
+impact because it encourages good behaviour. This direct
+approach  of  helping  the  user  find  better  alternatives
+is  hypothesized  to  be  successful.  In  follow-up  studies
+performing user studies will provide us with a conclusive
+result. Ideally the tool will suggest an alternative, equally
+successful and capable application. In this ideal situation
+we hypothesize this switch will have little to no impact
+on  the  user.  In  these  situations  it  is  easy  for  a  user  to
+switch to the alternate application. However in situations
+where the alternate app is not as successful, getting the
+user to transition will be a challenge. We argue that in
+these  situations,  where  the  network  effect  is  working
+against the target app (e.g., migrating from Facebook to
+Nextdoor)  a  transition  will  be  much  more  difficult  and
+require  additional  reasons  to  switch.  One  such  reason
+is  the  platform  their  peers  utilize.  A  move  between
+equally successful and capable apps (e.g., migrating from
+Facebook to Instagram) is possible only if their peers also
+use Instagram or are also making the same move.
+<!--l. 101--><p class="indent" >                                                <a 
+ id="x1-3r2"></a>
+   <!--l. 101--><p class="noindent" ><span 
+class="ptmb7t-">2</span>    <span 
+class="ptmb7t-">Methodology</span>
+   <a 
+ id="Q1-1-0"></a>
+   <!--l. 102--><p class="indent" >
+   To successfully implement a tool providing transparency
+   regarding personally identifying information three properties
+   had to be implemented:
+   <span 
+class="ptmb7t-">Property 1.</span>  An easy-to-use interface that allowed users
+           to quickly see the offending apps
+   <span 
+class="ptmb7t-">Property 2.</span>  The ability to determine offending apps on
+           a per-user basis
+   <span 
+class="ptmb7t-">Property 3.</span>  A    list    of    information    regarding    the
+           offending apps
+   <!--l. 110--><p class="indent" >
+   <a 
+ id="x1-7r1"></a>
+   <!--l. 110--><p class="noindent" ><span 
+class="ptmb7t-">2.1</span>    <span 
+class="ptmb7t-">The User Interface</span>
+   <a 
+ id="Q1-1-0"></a>
+   <!--l. 111--><p class="indent" >
+   The user interface (UI) is by the far the most important
+   piece.  Ensuring  that  the  users  are  able  to  find  what
+   applications   are   offending,   and   the   steps   they   can
+   take  to  protect  their  PII  is  paramount  to  successful
+   adoption. If users spend too much time without a solution
+   they  will  turn  else-where  and  use  another  app.  Two
+   potential platforms were explored for the user interface:
+   building  a  website  or  mobile  application.  The  website
+   provides   a   cross-platform   interface   that   anyone&#8212;on
+   any  device&#8212;can  use.  Additionally  the  website  would
+   be  easier  to  support  and  build  as  it  would  be  using
+   a  single  code-base.  However  the  website  lacked  one
+   key  requirement.  It  does  not  support  <span 
+class="ptmb7t-">Property  2  </span>The
+   ability to determine offending apps on a per-user basis.
+   Getting  this  information  from  the  browser  is  currently
+   not possible, it is abstracted away for security purposes.
+   The team behind AppCensus has already built a website
+   that  satisfies  <span 
+class="ptmb7t-">Properties  1  and  3</span>.  As  a  result  our  tools
+   main goal was implementing <span 
+class="ptmb7t-">Property 2 </span>and leveraging
+   AppCensus&#8217;s existing website. To implement <span 
+class="ptmb7t-">Property 2</span>
+   we build a mobile application. We could either build this
+   using a cross platform tool (e.g., Google Flutter, React
+   Native)  or  build  a  native  application.  A  cross-platform
+   tool would be more appealing but requires more overhead
+   for  development  and  design.  Another  consequence  is
+                                                                                         
+                                                                                         
+inability  to  satisfy  <span 
+class="ptmb7t-">Property  2  </span>on  iOS.  As  a  result
+building a native application written strictly for Android
+was the approach we executed.
+<!--l. 114--><p class="indent" >
+<a 
+ id="x1-8r2"></a>
+<!--l. 114--><p class="noindent" ><span 
+class="ptmb7t-">2.2</span>  <span 
+class="ptmb7t-">Determining offending application on a per-user</span>
+    <span 
+class="ptmb7t-">basis</span>
+<a 
+ id="Q1-1-0"></a>
+<!--l. 115--><p class="indent" >
+This was hinted at in the previous section &#8212; finding what
+applications  a  user  has  intsalled  is  not  as  simple  as  it
+might seem. As we were both targeting mobile platforms
+our   options   were   iOS   and   Android.   Mobile   phone
+manufacturers  are  becoming  increasingly  restrictive  to
+ensure privacy and security of their users. This becomes
+an issue because getting a list of all installed applications
+or   a   list   of   all   running   applications   is   a   valuable
+commodity. As a result iOS denies this capability to app
+developers, Android does not. Our decision was simple
+we would be implementing this piece on Android only.
+<!--l. 118--><p class="indent" >
+<a 
+ id="x1-9r3"></a>
+<!--l. 118--><p class="noindent" ><span 
+class="ptmb7t-">2.3</span>  <span 
+class="ptmb7t-">Application Information</span>
+<a 
+ id="Q1-1-0"></a>
+<!--l. 119--><p class="indent" >
+Collecting information about applications is not a trivial
+task. Determining what applications are similar to others
+requires  information  that  links  different  applications
+together. Android does not provide a way to collect this
+information. In order to make implement this feature an
+additional piece will call an internet service that provides
+information about if two apps are similar (e.g., Facebook
+and  Whatsapp  are  both  in  the  social  media  category).
+On  its  own  this  similarity  is  not  useful.  There  are
+multiple factors in how people choose applications. As
+stated earlier the network effect is important in bringing
+users to the app that their peers use. Collecting all this
+information requires a formal user study or existing data
+source.  AppCensus  has  work  underway  to  provide  this
+information.  They  have  a  database  containing  how  the
+application  misused  the  users  privacy.  The  number  of
+entries here is ever growing as this project continues.
+<!--l. 122--><p class="indent" >
+<a 
+ id="x1-10r4"></a>
+<!--l. 122--><p class="noindent" ><span 
+class="ptmb7t-">2.4</span>  <span 
+class="ptmb7t-">Implementation Details</span>
+<a 
+ id="Q1-1-0"></a>
+<!--l. 123--><p class="indent" >  <hr class="figure"><div class="figure" 
+><img 
+src="figs/images/Dash.png" alt="PIC"  
+> <a 
+ id="x1-11r1"></a>                                          <span 
+class="ptmro7t-">Figure</span><span 
+class="ptmro7t-">&#x00A0;1:   Final   iteration   of   the   Overview   screen,</span>
+   <span 
+class="ptmro7t-">designed using Sketch, the first page users see.</span>
+   <!--l. 128--><p class="indent" >    </div><hr class="endfigure">
+   <!--l. 130--><p class="indent" >
+   The  user  interface  was  designed  using  Sketch,  an  app
+   aimed at creating high-fidelity prototypes. By spending
+   time iterating on the prototype it allows us to find issues
+   with  the  interface.  As  the  requirements  are  vague&#8212;we
+   have a goal to build a tool that helps users understand how
+   applications use their PII&#8212;the time we spend designing
+   helps flesh out the kinks. While designing we are able to
+   familiarize ourselves with Android Studio&#8212;our primary
+   development  environment.  To  aid  in  development  and
+   because  a  large  amount  of  documentation  and  libraries
+   have moved over to Kotlin, we will develop our tool in
+   Kotlin. Tying into the AppCensus&#8217;s database is currently
+   not possible&#8212;there is an ongoing effort for AppCensus
+   to provide an Application Programming Interface (API)
+   that  will  allow  our  tool  to  communicate  with  their
+   information.  From  a  functionality  perspective  the  app
+   currently allows us to get user feedback and in the future
+   gives  us  the  ability  to  iterate  into  a  production  ready
+   application. <span 
+class="ptmb7t-">Property 2 </span>was a complete implementation
+   success. Every time the user launches the app, they are
+   provided with a list of their installed applications and a
+   privacy rating for each of the apps. Android provides this
+   capability with a simple call, making implementing this
+   part a breeze.
+   The user interface is based around three primary pages:
+   The overview page [Figure <a 
+href="#x1-11r1">1<!--tex4ht:ref: fig:overview --></a>] which provides a high-level
+   health  of  the  user&#8217;s  device.  A  list  of  all  applications
+   categorized  by  risk  (e.g.,  High  Risk,  Low  Risk,  No
+   Risk)[Figure   <a 
+href="#x1-12r2">2<!--tex4ht:ref: fig:highrisk --></a>].   Third,   a   detailed   view   describing
+   explaining   the   reason   for   the   application&#8217;s   category
+   placement[Figure <a 
+href="#x1-13r3">3<!--tex4ht:ref: fig:detail --></a>].
+   <!--l. 135--><p class="indent" >    <hr class="figure"><div class="figure" 
+><img 
+src="figs/images/highrisk.png" alt="PIC"  
+> <a 
+ id="x1-12r2"></a>
+             <span 
+class="ptmro7t-">Figure</span><span 
+class="ptmro7t-">&#x00A0;2: Iteration of the High Risk screen.</span>
+   <!--l. 140--><p class="indent" >    </div><hr class="endfigure">
+   <!--l. 142--><p class="indent" >    <hr class="figure"><div class="figure" 
+><img 
+src="figs/images/details.png" alt="PIC"  
+> <a 
+ id="x1-13r3"></a>
+             <span 
+class="ptmro7t-">Figure</span><span 
+class="ptmro7t-">&#x00A0;3: Initial iteration of the details page.</span>
+   <!--l. 147--><p class="indent" >    </div><hr class="endfigure">
+   <!--l. 148--><p class="indent" >
+                                                                                         
+                                                                                         
+<a 
+ id="x1-14r3"></a>
+<!--l. 150--><p class="noindent" ><span 
+class="ptmb7t-">3</span>  <span 
+class="ptmb7t-">Results</span>
+<a 
+ id="Q1-1-3"></a>
+<!--l. 151--><p class="indent" >
+<!--l. 153--><p class="indent" >  <hr class="float"><div class="float" 
+> <!--tex4ht:inline--><div class="tabular"> <table id="TBL-2" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-2-1g"><col 
+id="TBL-2-1"><col 
+id="TBL-2-2"><col 
+id="TBL-2-3"><col 
+id="TBL-2-4"><col 
+id="TBL-2-5"><col 
+id="TBL-2-6"><col 
+id="TBL-2-7"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-2-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-1-1"  
+class="td11"><span 
+class="ptmb7t-">Trial</span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-1-2"  
+class="td11"><span 
+class="ptmb7t-">Number of Applications Installed</span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-1-3"  
+class="td11"><span 
+class="ptmb7t-">(a)</span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-1-4"  
+class="td11"><span 
+class="ptmb7t-">(b)</span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-1-5"  
+class="td11"><span 
+class="ptmb7t-">(c)</span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-1-6"  
+class="td11"><span 
+class="ptmb7t-">(d)</span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-1-7"  
+class="td11"><span 
+class="ptmb7t-">Overall</span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-2-1"  
+class="td11"><span 
+class="ptmb7t-">1       </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-2-2"  
+class="td11">2                                                       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-2-3"  
+class="td11">2   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-2-4"  
+class="td11">5   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-2-5"  
+class="td11">10</td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-2-6"  
+class="td11">10 </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-2-7"  
+class="td11">27         </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-3-1"  
+class="td11"><span 
+class="ptmb7t-">2 </span></td> <td  style="white-space:nowrap; text-align:left;" id="TBL-2-3-2"  
+class="td11">2 </td> <td  style="white-space:nowrap; text-align:left;" id="TBL-2-3-3"  
+class="td11">2 </td> <td  style="white-space:nowrap; text-align:left;" id="TBL-2-3-4"  
+class="td11">6 </td> <td  style="white-space:nowrap; text-align:left;" id="TBL-2-3-5"  
+class="td11">10</td> <td  style="white-space:nowrap; text-align:left;" id="TBL-2-3-6"  
+class="td11">10 </td> <td  style="white-space:nowrap; text-align:left;" id="TBL-2-3-7"  
+class="td11">28</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-4-1"  
+class="td11"><span 
+class="ptmb7t-">3       </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-4-2"  
+class="td11">10                                                     </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-4-3"  
+class="td11">3   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-4-4"  
+class="td11">8   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-4-5"  
+class="td11">10</td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-4-6"  
+class="td11">10 </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-4-7"  
+class="td11">31         </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-5-1"  
+class="td11"><span 
+class="ptmb7t-">4 </span></td> <td  style="white-space:nowrap; text-align:left;" id="TBL-2-5-2"  
+class="td11">20 </td> <td  style="white-space:nowrap; text-align:left;" id="TBL-2-5-3"  
+class="td11">2 </td> <td  style="white-space:nowrap; text-align:left;" id="TBL-2-5-4"  
+class="td11">9 </td> <td  style="white-space:nowrap; text-align:left;" id="TBL-2-5-5"  
+class="td11">10</td> <td  style="white-space:nowrap; text-align:left;" id="TBL-2-5-6"  
+class="td11">10 </td> <td  style="white-space:nowrap; text-align:left;" id="TBL-2-5-7"  
+class="td11">31</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-6-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-6-1"  
+class="td11"><span 
+class="ptmb7t-">5       </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-6-2"  
+class="td11">15                                                     </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-6-3"  
+class="td11">3   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-6-4"  
+class="td11">10 </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-6-5"  
+class="td11">10</td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-6-6"  
+class="td11">10 </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-6-7"  
+class="td11">33         </td></tr></table></div><a 
+ id="x1-15r1"></a>
+                                  <span 
+class="ptmro7t-">Table</span><span 
+class="ptmro7t-">&#x00A0;1: Experiment results</span>
+  </div><hr class="endfloat" />
+<!--l. 166--><p class="indent" >
+<a 
+ id="x1-16r1"></a>
+<!--l. 166--><p class="noindent" ><span 
+class="ptmb7t-">3.1</span>  <span 
+class="ptmb7t-">Experiment Setup</span>
+<a 
+ id="Q1-1-4"></a>
+<!--l. 167--><p class="indent" >
+To measure success we applied our initial goal, to create a
+tool that better equips users in today&#8217;s advertising landscape,
+to the three properties discussed above:
+<span 
+class="ptmb7t-">Property 1.</span> An easy-to-use interface that allowed users
+    to quickly see the offending apps
+<span 
+class="ptmb7t-">Property 2.</span> The ability to determine offending apps on
+    a per-user basis
+<span 
+class="ptmb7t-">Property 3.</span> A    list    of    information    regarding    the
+    offending apps
+<!--l. 174--><p class="noindent" >
+From these properties we proposed a functioning, and usable
+Android application with the following abilities:
+    <ul class="itemize1">
+    <li class="itemize">to easily see offending applications,
+    </li>
+    <li class="itemize">to identify how an application is using PII, and
+    </li>
+    <li class="itemize">to maintain an up-to-date list of applications</li></ul>
+<!--l. 181--><p class="noindent" >
+To determine whether this tool is successful ideally we
+would undertake a large-scale user study, we leave this as
+future work. We recommend that this is done to inform
+and iterate the design and development of the tool.         Using the above measures we attempt this user study in
+   small-scale. To accurately represent a user we download
+   applications based on popularity, not on what is contained
+   in the AppCensus database. This is done by first setting
+   up a phone with at least ten popular Android applications
+   and games. The applications are each launched once. This
+   ensures  any  additional  content  is  downloaded  and  the
+   applications are functioning normally.
+   We now launch our tool and compare on the above measures.
+   We evaluate each attempt in the study by giving marks to
+   each task on a scale out of thirty-five (35), it is broken down
+   as follows:
+                 <ul class="itemize1">
+                 <li class="itemize">the  information  provided  is  clear  and  concise,
+                 with a relevant action,                                      <span 
+class="ptmb7t-">[5</span>
+                 <span 
+class="ptmb7t-">marks]</span>
+                 </li>
+                 <li class="itemize">a usable interface, if the application crashes this
+                 mark is a 0,                                                     <span 
+class="ptmb7t-">[10</span>
+                 <span 
+class="ptmb7t-">marks]</span>
+                 </li>
+                 <li class="itemize">the  application&#8217;s  offences  are  clearly  marked
+                 and,                                                                <span 
+class="ptmb7t-">[10</span>
+                 <span 
+class="ptmb7t-">marks]</span>
+                 </li>
+                 <li class="itemize">the  list  contains  no  applications  that  the  user
+                 does not have installed.                                  <span 
+class="ptmb7t-">[10</span>
+                 <span 
+class="ptmb7t-">marks]</span></li></ul>
+<!--l. 192--><p class="noindent" >
+   A mark of thirty is required for this to be considered a
+   fulsome  success.  The  number  thirty  was  used  because
+   we   understand   that   some   of   the   features   described
+   above require AppCensus to finish developing their API.
+   Without this API, providing &#8220;a relevant action&#8221; becomes
+   difficult. As such we have removed five marks.
+   During design a modified version is used to help reach a
+   successful user experience. Functionality is not important
+   during design, using only item <span 
+class="ptmb7t-">(b) </span>without any weight on
+   crashing and <span 
+class="ptmb7t-">(c) </span>we can indicate progress through design.
+   To  move  on  to  development  a  score  of  fifteen  (15)  or
+   higher is required. The reason for accepting a score under
+   100%  is  because  during  development  further  progress
+   will be made. We anticipate that revisions will be made
+   to overcome obstacles faced during development, and as
+   we become comfortable with Android Studio.
+                                                                                         
+                                                                                         
+The  experiment  is  performed  during  development  and
+in  preparation  for  the  conclusion  of  the  research.  To
+aid  in  development  time,  AppCensus  has  provided  a
+sample  data-set  that  contains  a  list  of  applications  and
+the personally identifying information that are violated.
+During development this experiment is carried out with
+two  applications  installed,  one  with  a  limited  number
+of transmitted PII, and the second with a large number
+of  transmitted  PII.  The  two  extremes  in  an  attempt  to
+catch  edge  cases.  After  the  end  of  development  the
+experiment will be performed again, this time with over
+ten  applications  installed  and  with  the  use  of  physical
+phones.
+<!--l. 200--><p class="indent" >
+<a 
+ id="x1-20r2"></a>
+<!--l. 200--><p class="noindent" ><span 
+class="ptmb7t-">3.2</span>  <span 
+class="ptmb7t-">Experiment Types</span>
+<a 
+ id="Q1-1-4"></a>
+<!--l. 201--><p class="indent" >
+The below results are an average of the trials in Table <a 
+href="#x1-15r1">1<!--tex4ht:ref: tab:results --></a>:
+<!--l. 204--><p class="indent" >
+<!--l. 204--><p class="noindent" ><span 
+class="ptmb7t-">Simulated experiment</span>
+       <ul class="itemize1">
+       <li class="itemize">the  information  provided  is  clear  and  concise,
+       with a relevant action,                                      <span 
+class="ptmb7t-">[2</span>
+       <span 
+class="ptmb7t-">marks]</span>
+       </li>
+       <li class="itemize">a usable interface, if the application crashes this
+       mark is a 0,                                                       <span 
+class="ptmb7t-">[6</span>
+       <span 
+class="ptmb7t-">marks]</span>
+       </li>
+       <li class="itemize">the  applications  offences  are  clearly  marked
+       and,                                                                <span 
+class="ptmb7t-">[10</span>
+       <span 
+class="ptmb7t-">marks]</span>
+       </li>
+       <li class="itemize">the list contains no applications the user does not
+       have installed.                                                <span 
+class="ptmb7t-">[10</span>
+       <span 
+class="ptmb7t-">marks]</span></li></ul>
+<!--l. 213--><p class="indent" >
+<!--l. 213--><p class="noindent" ><span 
+class="ptmb7t-">Final experiment</span>
+       <ul class="itemize1">
+       <li class="itemize">the  information  provided  is  clear  and  concise,
+       with a relevant action,                                      <span 
+class="ptmb7t-">[3</span>
+       <span 
+class="ptmb7t-">marks]</span>                                                 </li>
+                 <li class="itemize">a usable interface, if the application crashes this
+                 mark is a 0,                                                       <span 
+class="ptmb7t-">[9</span>
+                 <span 
+class="ptmb7t-">marks]</span>
+                 </li>
+                 <li class="itemize">the  applications  offences  are  clearly  marked
+                 and,                                                                <span 
+class="ptmb7t-">[10</span>
+                 <span 
+class="ptmb7t-">marks]</span>
+                 </li>
+                 <li class="itemize">the list contains no applications the user does not
+                 have installed.                                                <span 
+class="ptmb7t-">[10</span>
+                 <span 
+class="ptmb7t-">marks]</span></li></ul>
+   <!--l. 222--><p class="indent" >
+   The  final  experiment  is  carried  out  five  times.  Three
+   of those times are carried out on an software emulated
+   device.  The  two  runs  were  carried  out  on  a  physical
+   phone, the Google Nexus 6P. During each run a different
+   set  of  applications  is  installed  on  the  device.  Each  is
+   marked  independently.  The  marks  seen  above  are  an
+   average of each run, three for the simulated experiment,
+   and two for the final experiment. Changes to our tool are
+   made  after  the  simulated  experiment  is  complete.  This
+   allows us to iterate and improve on our final product.
+   <!--l. 227--><p class="indent" >
+   <a 
+ id="x1-21r3"></a>
+   <!--l. 227--><p class="noindent" ><span 
+class="ptmb7t-">3.3</span>    <span 
+class="ptmb7t-">Experiment Results</span>
+   <a 
+ id="Q1-1-4"></a>
+   <!--l. 228--><p class="indent" >
+   As  Table  <a 
+href="#x1-15r1">1<!--tex4ht:ref: tab:results --></a>  shows,  each  application  has  its  offences
+   clearly   marked,   and   the   list   does   not   contain   any
+   application the user does not have installed. This success
+   is  attributed  to  the  ease  of  implementation  and  heavy
+   emphasis on <span 
+class="ptmb7t-">(c) </span>from early in development. The interface
+   is  designed  around  the  transmitted  identifiers  that  the
+   sample data-set AppCensus provides. As table <a 
+href="#x1-15r1">1<!--tex4ht:ref: tab:results --></a> 1 also
+   shows, as development continues the interface becomes
+   more  usable.  This  is  largely  due  to  improvements  and
+   bug fixes that occur during this period. Finally, during the
+   trials there was no improvement in <span 
+class="ptmb7t-">(a)</span>. While information
+   clarity is improving between trials, the ability to suggest
+   alternative applications is not implemented. Therefore no
+   additional marks can be given to that feature.
+   <!--l. 231--><p class="indent" >
+   Overall these results are successful. This is largely due to
+   the success of our design and initial research. The design
+                                                                                         
+                                                                                         
+captures the requirements of our tool, providing a usable
+interface that clearly marks the application&#8217;s offences.
+<!--l. 235--><p class="indent" >
+<a 
+ id="x1-22r4"></a>
+<!--l. 235--><p class="noindent" ><span 
+class="ptmb7t-">4</span>  <span 
+class="ptmb7t-">Discussion</span>
+<a 
+ id="Q1-1-4"></a>
+<!--l. 236--><p class="indent" >
+The  progress  made  during  this  research  is  promising.
+We believe that with further development, by testing and
+iterating  on  the  current  product,  launching  AppCensus
+for Android will be successful. In order to be successful
+the  user  interface  should  be  iterated  upon,  including
+suitable  alternatives  to  the  offending  application  and
+educating the user on the harms of each identifier. The
+designs  for  alternative  applications  are  present  in  our
+high-fidelity prototype. After completion of AppCensus&#8217;s
+API,  it  becomes  possible  to  add  these  as  functioning
+pages within our tool.
+Developing   for   Android   using   Android   Studio   has
+steep  a  learning  curve.  Part  of  the  success  is  as  a
+result  of  the  previous  experience  developing  mobile
+applications.  If  our  tool  is  to  be  further  developed,  we
+recommend additional time be dedicated to development.
+Furthermore,  investigating  iOS  should  be  done  for  the
+case  Apple  begin  to  provide  support  for  installed  or
+running applications. Developing an application for both
+platforms, iOS and Android, doubles the amount of work
+required.  To  alleviate  this,  a  multi-platform  tool  (e.g.,
+Google Flutter, React Native) is highly recommended for
+development.
+<!--l. 242--><p class="indent" >  &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
+<!--l. 244--><p class="indent" >
+<a 
+ id="x1-23r5"></a>
+<!--l. 244--><p class="noindent" ><span 
+class="ptmb7t-">5</span>  <span 
+class="ptmb7t-">Bibliography and Citations</span>
+<a 
+ id="Q1-1-4"></a>
+<!--l. 247--><p class="indent" >  Refer to citations using a square-bracketed numeral <span class="cite">[<span 
+class="ptmb7t-">?</span>]</span>.
+Multiple citations should be referenced with a comma-separated
+list inside brackets <span class="cite">[<span 
+class="ptmb7t-">?</span>,&#x00A0;<span 
+class="ptmb7t-">?</span>,&#x00A0;<span 
+class="ptmb7t-">?</span>]</span>. Try to list such citations in
+numerical order. Citations are not nouns! They should be
+treated grammatically as parenthetical statements. Say
+&#8220;Consider the work of Markosian et al <span class="cite">[<span 
+class="ptmb7t-">?</span>]</span> and Gooch et
+al.&#x00A0;<span class="cite">[<span 
+class="ptmb7t-">?</span>]</span> &#8221;, not &#8220;Consider the work of <span class="cite">[<span 
+class="ptmb7t-">?</span>]</span> and <span class="cite">[<span 
+class="ptmb7t-">?</span>]</span>&#8221;. Do not start
+a sentence with a citation.
+<!--l. 262--><p class="indent" >
+<!--l. 262--><p class="noindent" ><span 
+class="ptmb7t-">Acknowledgements</span>
+<!--l. 262--><p class="indent" >  Note there is no section number on the acknowledgement
+section header or on the header for the references.               
+</body></html> 
+
+                                                                                         
+
+
