@@ -4,3 +4,4 @@ My name is Hilmi Abou-Saleh, and this is my last semester of school! During this
 
 Additionally this page will contain links to my <a href="503 Final Presentation.pdf">presentation</a> and <a href="CPSC_503_Research_Paper.pdf">paper</a>
 
+Lastly if you're interested in my source code, check out [this repo](https://github.com/madebyhilmi/appcensus)
